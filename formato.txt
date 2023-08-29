@@ -1,0 +1,55 @@
+¿Por qué un lenguaje de programación sólo puede utilizarse en algunos sistemas operativos y en otros no?.
+Se debe a varias razones técnicas, históricas y de diseño.
+- Dependencia de la plataforma: Los lenguajes de programación están diseñados para interactuar con el hardware y el sistema operativo subyacente. Si un lenguaje está estrechamente integrado con ciertas características de un sistema operativo en particular, es posible que no funcione en otros sistemas operativos con arquitecturas o características diferentes.
+
+- Librerías y APIs específicas: Los lenguajes de programación a menudo se utilizan junto con bibliotecas y APIs (Interfaces de Programación de Aplicaciones) específicas del sistema operativo. Estas bibliotecas pueden no estar disponibles o ser diferentes en otros sistemas operativos, lo que dificulta la portabilidad del código.
+
+- Implementaciones y compiladores: Los lenguajes pueden tener múltiples implementaciones y compiladores, algunos de los cuales se desarrollan específicamente para un sistema operativo en particular. Esto puede hacer que el código sea dependiente de la implementación y, por lo tanto, no sea compatible en otros sistemas.
+
+- Arquitectura y conjunto de instrucciones: Diferentes sistemas operativos pueden ejecutarse en diferentes arquitecturas de procesadores y conjuntos de instrucciones. Algunos lenguajes pueden estar optimizados para una arquitectura específica, lo que dificulta su uso en sistemas con arquitecturas diferentes.
+
+- Historia y legado: Algunos lenguajes de programación tienen una historia y un legado que los vinculan estrechamente a ciertos sistemas operativos. Esto puede hacer que sea más difícil o menos práctico adaptarlos a otros sistemas.
+
+- Política y soporte: Algunas empresas o comunidades pueden centrarse en el desarrollo y el soporte de un lenguaje en sistemas operativos específicos debido a sus objetivos, recursos y enfoques estratégicos.
+
+¿Qué tipo de máquina virtual soporta virtualBox?. 
+- x86/AMD64: VirtualBox puede virtualizar sistemas operativos de 32 y 64 bits basados en la arquitectura x86 y AMD64 (también conocida como x86-64).
+
+- Linux: VirtualBox es compatible con una amplia variedad de distribuciones de Linux, lo que permite crear máquinas virtuales Linux y ejecutarlas en diferentes sistemas operativos anfitriones.
+
+- Windows: Puedes virtualizar varias versiones de Windows, incluidas las ediciones de 32 y 64 bits.
+
+- macOS: VirtualBox puede ejecutarse en macOS y crear máquinas virtuales que ejecutan sistemas operativos diferentes, incluido Windows.
+
+- Solaris: VirtualBox tiene soporte para sistemas operativos de la familia Solaris.
+
+- BSD: VirtualBox puede alojar máquinas virtuales que ejecutan sistemas operativos de la familia BSD, como FreeBSD y OpenBSD.
+
+- Otros sistemas operativos: VirtualBox es compatible con otros sistemas operativos menos comunes y sistemas operativos de código abierto.
+
+¿Qué función cumple el hypervisor en la virtualización?
+Su función principal es crear y gestionar múltiples máquinas virtuales en un solo sistema físico. El hypervisor actúa como una capa de software que se encuentra entre el hardware físico y las máquinas virtuales, permitiendo la compartición eficiente de los recursos de hardware entre ellas. Sus funciones principales son las siguientes:
+
+- Aislamiento y compartición de recursos: El hypervisor se encarga de dividir los recursos físicos (CPU, memoria, almacenamiento, red, etc.) en recursos virtuales y asignarlos a cada máquina virtual. Esto permite que múltiples máquinas virtuales se ejecuten de manera aislada unas de otras, evitando interferencias y conflictos.
+
+- Abstracción del hardware: El hypervisor oculta los detalles específicos del hardware subyacente de las máquinas virtuales. Cada máquina virtual cree que está interactuando con su propio hardware dedicado, lo que facilita la migración entre diferentes plataformas físicas sin necesidad de realizar modificaciones en las máquinas virtuales.
+
+- Gestión y control: El hypervisor proporciona herramientas para crear, configurar, iniciar, detener y administrar las máquinas virtuales. Esto incluye la asignación de recursos, la definición de configuraciones de red y la monitorización del rendimiento.
+
+- Aislamiento de fallos: El uso de un hypervisor puede aumentar la seguridad y la estabilidad del sistema, ya que los fallos en una máquina virtual tienen menos probabilidad de afectar a otras máquinas virtuales o al sistema anfitrión.
+
+- Migración y alta disponibilidad: Los hypervisors modernos permiten la migración en vivo de máquinas virtuales de un host físico a otro sin interrupciones significativas. También facilitan la configuración de entornos de alta disponibilidad para garantizar la continuidad del servicio.
+
+- Optimización de recursos: El hypervisor administra y distribuye los recursos de hardware de manera eficiente, asegurando que las máquinas virtuales obtengan los recursos que necesitan y evitando un uso excesivo o insuficiente de los mismos.
+
+Si tengo más de una máquina virtual instalada, y una se rompe, ¿esto afecta a las demás? ¿por qué?
+En general, si una máquina virtual se rompe o experimenta un fallo, esto no debería afectar directamente a las demás máquinas virtuales que se ejecutan en el mismo entorno virtualizado. La virtualización está diseñada para proporcionar aislamiento entre las máquinas virtuales y protegerlas de los fallos y problemas de otras máquinas virtuales. Sin embargo, hay algunas consideraciones importantes a tener en cuenta:
+
+- Aislamiento: La virtualización crea una capa de aislamiento entre las máquinas virtuales y el hardware subyacente, lo que significa que los fallos en una máquina virtual no deberían propagarse automáticamente a otras máquinas virtuales.
+
+- Recursos compartidos: Aunque las máquinas virtuales están aisladas, comparten los recursos físicos (como CPU, memoria y almacenamiento) del host. Si una máquina virtual está utilizando una cantidad desproporcionada de recursos y afecta el rendimiento general del host, podría tener un impacto indirecto en las demás máquinas virtuales.
+
+- Errores en el hipervisor: Si el hipervisor (software de virtualización) presenta un fallo grave, podría afectar a todas las máquinas virtuales que se ejecutan en él. Sin embargo, los hipervisores modernos están diseñados con medidas de seguridad y redundancia para minimizar la posibilidad de que un fallo del hipervisor afecte a todas las máquinas virtuales.
+
+- Red y almacenamiento: Los problemas de red y almacenamiento pueden impactar en todas las máquinas virtuales si los recursos se comparten y se ven afectados por problemas en la infraestructura subyacente.
+
